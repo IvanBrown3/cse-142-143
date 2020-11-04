@@ -1,6 +1,5 @@
 import java.util.*; 
 
-
 public class GuessingGame {
     public static final int MAX_VALUE = 100;
     public static void main(String [] args){
@@ -10,7 +9,7 @@ public class GuessingGame {
         
         int gameCount = 0;
         int totalGuesses = 0;
-        int bestGuesses=0;
+        int bestGuesses  = 0;
         boolean decision = true;
 
         while(decision){
@@ -82,12 +81,8 @@ public class GuessingGame {
         System.out.println("Overall results:");
         System.out.println("Total games   = " + gameCount);
         System.out.println("Total guesses = " + guessCount);
-        
         System.out.println("Guesses/game  = " + roundUp((double) guessCount/gameCount));
-
         System.out.println("Best game     = " + bestGuesses);
-
-
     }
 }   
 
