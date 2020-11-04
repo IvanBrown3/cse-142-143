@@ -89,5 +89,5 @@ public class GuessingGame {
 
 
     }
-}   //create while lopp in main method
+}   
 
