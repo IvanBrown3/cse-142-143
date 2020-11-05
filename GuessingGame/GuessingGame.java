@@ -10,8 +10,8 @@ import java.util.*;
 public class GuessingGame {
     public static final int MAX_VALUE = 100;
 
-    //creates new scanner object
-    //creates random object 
+    //creates new scanner object for user to input number
+    //creates random object that generates random number
     //prints haiku
     //intializes the amount of games, total guesses and best guess 
     //decision to play game again if true
@@ -21,12 +21,10 @@ public class GuessingGame {
         Scanner console = new Scanner(System.in);
         Random r = new Random();
         printHaiku();
-        
         int gameCount = 0;
         int totalGuesses = 0;
         int bestGuesses=0;
         boolean decision = true;
-
         while(decision){
             gameCount++; //increases game count by 1 each loop
             int guessCount = playGame(r,console);
@@ -40,7 +38,7 @@ public class GuessingGame {
                     bestGuesses = guessCount;
                 }
             }
-            decision = playAgain(r, console);
+            decision = playAgain(console);
         }
         reportTable(totalGuesses, gameCount, bestGuesses);
     }
@@ -54,9 +52,10 @@ public class GuessingGame {
     }
 
     //method to play a single game
-    //passes random object as parameter
-    //passes scanner objected as parameter
+    //passes random to create random number
+    //passes scanner object to input value
     //lets user know if their value was higher or lower than random
+    //returns the guess count after each game
     public static int playGame(Random r, Scanner console) {
         int randomNumber = r.nextInt(MAX_VALUE) + 1; //sets random value from 1-MAX_VALUE
         int personalNumber = 0; 
@@ -73,7 +72,6 @@ public class GuessingGame {
                 System.out.println("It's higher.");
             }
         }
-        
         if(guessCount == 1){
             System.out.println("You got it right in " + guessCount + " guess!");
         }
@@ -84,14 +82,13 @@ public class GuessingGame {
     }
 
     //method to play another game 
-    //passes random object, scanner object as parameters
+    //passes random object, scanner object as parameters to generate values
     //the program will play again if the user inputs any y in their answer 
-    public static boolean playAgain(Random r, Scanner console){
+    public static boolean playAgain(Scanner console){
         System.out.print("Do you want to play again? ");
         String pick = console.next();
         char first = pick.toLowerCase().charAt(0);
         System.out.println();
-        
         return (first == 'y');          //returns true if y is inputed 
     }
 
@@ -107,12 +104,8 @@ public class GuessingGame {
         System.out.println("Overall results:");
         System.out.println("Total games   = " + gameCount);
         System.out.println("Total guesses = " + guessCount);
-        
         System.out.println("Guesses/game  = " + roundUp((double) guessCount/gameCount));
-
         System.out.println("Best game     = " + bestGuesses);
-
-
     }
 }  
 
