@@ -9,7 +9,6 @@ import java.util.*;
 
 public class GuessingGame {
     public static final int MAX_VALUE = 100;
-
     //creates new scanner object for user to input number
     //creates random object that generates random number
     //prints haiku
