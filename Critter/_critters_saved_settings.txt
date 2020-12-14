@@ -1,0 +1,10 @@
+#CSE 142 Critters saved settings
+#Thu Dec 03 15:58:18 PST 2020
+Ant=true
+Bird=true
+Height=50
+Number\ of\ each\ critter=25
+Network\ features=true
+Width=60
+Secure\ tournament\ mode=true
+Debug\ output=false
