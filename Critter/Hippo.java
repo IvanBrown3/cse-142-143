@@ -20,7 +20,6 @@ import java.util.*;
 //field created for random object to be made
 //field for the direction 
 public class Hippo extends Critter{
-    private int randomNum; 
     private int hunger;
     private int movement;
     private Random rand;
@@ -31,9 +30,10 @@ public class Hippo extends Critter{
     //hunger is set to itself to keep the boolean statement neutral
     public Hippo(int hunger){
         movement = 0;
+        rand = new Random();
         this.hunger = hunger;
     }
-
+    
     //method to get the color of the hippo
     //returns the color of gray when the hippo is hungry 
     //returns white if the hippo is not hungry
@@ -43,7 +43,7 @@ public class Hippo extends Critter{
         }
         return Color.WHITE;
     }
-
+    
     //method to let the hippo fight
     //returns scratch when hungry
     //reutrns pounce if not hungry
@@ -56,14 +56,14 @@ public class Hippo extends Critter{
             return Attack.POUNCE;
         }
     }
-
+    
     //method to return the string of the hippo in the simulation
     //returns the string of the hunger of the hippo
     public String toString(){
         String string = Integer.toString(hunger); 
         return string;
     }
-
+    
     //method to allow hippo to move
     //moves randomly in a direction 5 times
     //returns 5 moves in the direction randomly based on the setDirection method
@@ -74,12 +74,12 @@ public class Hippo extends Critter{
         movement++;
         return direction;
     }
-
+    
     //method to set the direction that the hippo will randomly pick
     //private method to functionally remain in this class
     //random object created that creates a value of 4 numbers 0-3 inclusive 
     private void setDirection() {
-        rand = new Random();
+        int randomNum; 
         randomNum = rand.nextInt(4);
         if(randomNum == 0){
             direction = Direction.NORTH;

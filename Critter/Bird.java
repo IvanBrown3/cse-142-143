@@ -60,12 +60,6 @@ public class Bird extends Critter{
         }
     }
 
-    //boolean method to eat
-    //always returns false
-    public boolean eat(){
-        return false;
-    }
-
     //method to move the critter in a direction
     //returns direction north the first 3 moves
     //returns direction east second 3 moves

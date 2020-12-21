@@ -44,10 +44,5 @@ public class Vulture  extends Bird{
     //vulture will return a pounce for any other opponent
     public Attack fight(String opponent){
         hunger = true;
-        if (opponent.equals("%")){  
-            return Attack.ROAR;
-        } else {
-            return Attack.POUNCE;
-        }
     }
 }
