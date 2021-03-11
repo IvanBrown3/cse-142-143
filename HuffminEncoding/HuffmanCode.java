@@ -86,7 +86,7 @@ public class HuffmanCode {
             return;
         }
         if(n.left == null && n.right ==null){
-            output.print((char)n.acsiiCode);
+            output.write((char)n.acsiiCode);
             return;
         }   
         int bit = input.nextBit();
